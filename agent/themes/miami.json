@@ -1,0 +1,106 @@
+{
+  "$schema": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+  "name": "miami",
+  "vars": {
+    "background": "#2b2b2b",
+    "backgroundAlt": "#323232",
+    "backgroundRaised": "#3a3a3a",
+
+    "foreground": "#fafae3",
+    "white": "#c4c4c4",
+    "gray": "#919191",
+
+    "red": "#db5a53",
+    "brightRed": "#ff9999",
+
+    "green": "#71d46e",
+    "brightGreen": "#d0e354",
+
+    "yellow": "#ffba52",
+    "brightYellow": "#fadf7d",
+
+    "blue": "#90acfc",
+    "brightBlue": "#a7cafc",
+
+    "magenta": "#c28ad1",
+    "brightMagenta": "#f5b5f4",
+
+    "cyan": "#7accbd",
+    "brightCyan": "#b2ede5",
+
+    "accent": "#bd93f9",
+    "secondary": "#6272a4"
+  },
+
+  "colors": {
+    "accent": "accent",
+
+    "border": "accent",
+    "borderAccent": "brightMagenta",
+    "borderMuted": "gray",
+
+    "success": "green",
+    "error": "red",
+    "warning": "yellow",
+
+    "muted": "gray",
+    "dim": "white",
+    "text": "foreground",
+
+    "thinkingText": "cyan",
+
+    "selectedBg": "secondary",
+
+    "userMessageBg": "backgroundAlt",
+    "userMessageText": "foreground",
+
+    "customMessageBg": "backgroundAlt",
+    "customMessageText": "cyan",
+    "customMessageLabel": "magenta",
+
+    "toolPendingBg": "backgroundAlt",
+    "toolSuccessBg": "#253525",
+    "toolErrorBg": "#3b2929",
+
+    "toolTitle": "blue",
+    "toolOutput": "cyan",
+
+    "mdHeading": "magenta",
+    "mdLink": "blue",
+    "mdLinkUrl": "cyan",
+
+    "mdCode": "green",
+    "mdCodeBlock": "cyan",
+    "mdCodeBlockBorder": "secondary",
+
+    "mdQuote": "white",
+    "mdQuoteBorder": "secondary",
+
+    "mdHr": "secondary",
+    "mdListBullet": "magenta",
+
+    "toolDiffAdded": "green",
+    "toolDiffRemoved": "red",
+    "toolDiffContext": "white",
+
+    "syntaxComment": "gray",
+    "syntaxKeyword": "magenta",
+    "syntaxFunction": "blue",
+    "syntaxVariable": "cyan",
+    "syntaxString": "green",
+    "syntaxNumber": "yellow",
+    "syntaxType": "brightBlue",
+    "syntaxOperator": "brightMagenta",
+    "syntaxPunctuation": "white",
+
+    "thinkingOff": "gray",
+    "thinkingMinimal": "green",
+    "thinkingLow": "cyan",
+    "thinkingMedium": "yellow",
+    "thinkingHigh": "magenta",
+    "thinkingXhigh": "brightMagenta",
+
+    "bashMode": "green",
+    "export": "background"
+  }
+}
