@@ -1,0 +1,14 @@
+{
+  "defaultShell": "zsh",
+  "includeCoAuthoredBy": false,
+  "packages": [
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access",
+    "npm:statusline-pi",
+    "npm:pi-startup-header"
+  ],
+  "quietStartup": false,
+  "theme": "neon-green",
+  "tuiMode": "fullscreen",
+  "lastChangelogVersion": "0.84.1"
+}
