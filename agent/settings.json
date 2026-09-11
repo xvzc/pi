@@ -1,14 +1,35 @@
 {
   "defaultShell": "zsh",
   "includeCoAuthoredBy": false,
+  "quietStartup": false,
   "packages": [
     "npm:pi-mcp-adapter",
     "npm:pi-web-access",
-    "npm:statusline-pi",
-    "npm:pi-startup-header"
+    "npm:pi-minimal-footer",
+    "npm:pi-startup-header",
+    "npm:@tintinweb/pi-subagents@0.19.0"
   ],
-  "quietStartup": false,
+  "extensions": [
+    "extensions/pi-todo",
+    "extensions/pi-ask-user"
+  ],
   "theme": "neon-green",
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "0.84.1"
+  "lastChangelogVersion": "0.85.1",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-terra",
+  "defaultThinkingLevel": "medium",
+  "hideThinkingBlock": true,
+  "showLastPrompt": false,
+  "powerline": {
+    "preset": "compact",
+    "placement": "below",
+    "welcome": false
+  },
+  "todo": {
+    "collapseKey": "off"
+  },
+  "ask-user-question": {
+    "collapseKey": "off"
+  }
 }

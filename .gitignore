@@ -1,0 +1,37 @@
+# macOS / editor noise
+.DS_Store
+._*
+*.swp
+*.swo
+
+# direnv / local Nix runtime
+.direnv/
+
+# Pi local secrets and machine/session state
+agent/auth.json
+agent/models-store.json
+agent/sessions/
+agent/debug.log
+
+# Pi task / workflow local state
+.pi/
+
+# Pi runtime history, missions, and caches
+agent/run-history.jsonl
+agent/missions/
+agent/web-search-cache/
+agent/mcp-cache.json
+
+# Local extension backups
+agent/extensions_bkup/
+
+# Pi installed package cache / generated package-manager files
+agent/npm/
+agent/git/
+agent/bin/
+
+# Dependencies installed for local Pi extensions
+agent/extensions/**/node_modules/
+
+# Local git worktrees for async/parallel agent work
+.worktree/
