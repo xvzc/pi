@@ -70,8 +70,8 @@ Set `done` only after the user explicitly approves completion. Record the approv
 id: <YYYYMMDD>_<2-digit-sequence>_<kebab-case-slub>
 title: <short title>
 status: draft
-created: <YYYY-MM-DD>
-updated: <YYYY-MM-DD>
+created_at: <YYYY-MM-DDTHH:MM:SSZ>
+updated_at: <YYYY-MM-DDTHH:MM:SSZ>
 ---
 
 # Goal
