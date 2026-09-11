@@ -1,8 +1,7 @@
 # Configuration reference
 
-Every option
-[`@juicesharp/rpiv-todo`](https://www.npmjs.com/package/@juicesharp/rpiv-todo)
-reads, where the file lives, and exactly what happens when a value is wrong.
+Every option the local `todo` extension reads, where the file lives, and exactly
+what happens when a value is wrong.
 
 ## Where the config lives
 

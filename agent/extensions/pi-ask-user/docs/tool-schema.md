@@ -118,10 +118,10 @@ pi.events.on(ASK_USER_PROMPT_EVENT, (payload: AskUserPromptEventPayload) => {
 });
 ```
 
-The channel name is `rpiv:ask-user:prompt`. Preview *content* is deliberately not shipped
+The channel name is `pi-ask-user:prompt`. Preview *content* is deliberately not shipped
 in the payload — only `hasPreview: boolean` — so listeners forwarding the event across a
 process or network boundary stay cheap.
 
-Stability policy for the `rpiv:*` namespace: channel names are immutable, payload changes
-are append-only and always optional, payloads stay JSON-safe, and any breaking change ships
-as a new channel (e.g. `rpiv:ask-user:prompt.v2`) rather than a version field.
+Stability policy for the `pi-ask-user:*` namespace: payloads are JSON-safe and
+append-only where possible; breaking payload/channel changes should use a new
+channel name rather than a version field.

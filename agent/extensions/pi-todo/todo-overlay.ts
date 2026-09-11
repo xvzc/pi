@@ -19,7 +19,7 @@ import { selectHasActive, selectOverlayLayout, selectShowTaskIds, selectTodoCoun
 import { getRenderState } from "./state/store.js";
 import { formatOverlayTaskLine, formatStatusLabel } from "./view/format.js";
 
-const WIDGET_KEY = "rpiv-todos";
+const WIDGET_KEY = "pi-todos";
 
 // English overlay chrome strings.
 const OVERLAY_HEADING = "Todos";

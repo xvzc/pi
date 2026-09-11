@@ -16,9 +16,9 @@ function formatListLine(t: Task): string {
 }
 
 /**
- * Multi-line presentation for the `get` action. Order of rows is pinned by
- * pre-refactor `todo.ts:354-376` — description, activeForm, blockedBy, blocks,
- * owner — so envelope-level snapshot tests stay byte-equivalent.
+ * Multi-line presentation for the `get` action. Order of rows is pinned —
+ * description, activeForm, blockedBy, blocks, owner — so envelope-level
+ * snapshot tests stay stable.
  */
 function formatGetLines(task: Task, state: TaskState): string {
 	const blocks = deriveBlocks(state.tasks).get(task.id) ?? [];
@@ -38,8 +38,6 @@ function formatGetLines(task: Task, state: TaskState): string {
 /**
  * Pure formatter: `(op, state) → string`. Closed switch on `op.kind` —
  * adding a new `Op` variant fails to compile here until a branch is added.
- * The strings on each branch are byte-equivalent to pre-refactor `todo.ts`
- * reducer output.
  */
 export function formatContent(op: Op, state: TaskState): string {
 	switch (op.kind) {
@@ -78,7 +76,7 @@ export function formatContent(op: Op, state: TaskState): string {
  * reducer's new state. `details` is the persistence + replay snapshot —
  * `state/replay.ts` consumes this exact shape on session lifecycle events.
  *
- * Mirrors `packages/rpiv-ask-user-question/tool/response-envelope.ts:13-47`.
+ * Matches the local tool response-envelope shape.
  */
 export function buildToolResult(
 	action: TaskAction,

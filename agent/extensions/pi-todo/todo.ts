@@ -4,12 +4,10 @@
  * Tool/command identity, schema, types, reducer, store, replay, response
  * envelope, selectors, and view formatters live in the layered modules under
  * `tool/`, `state/`, and `view/`. This file is the package-root registration
- * surface — it mirrors `packages/rpiv-ask-user-question/ask-user-question.ts`
- * which keeps the tool registration at the package root.
+ * surface, keeping tool registration in the extension root.
  *
- * Public re-exports below preserve the pre-refactor import surface so that
- * `index.ts`, `todo-overlay.ts`, and the global `test/setup.ts` `beforeEach`
- * continue to import from `./todo.js`.
+ * Public re-exports below preserve the local import surface so that `index.ts`,
+ * `todo-overlay.ts`, and tests can continue to import from `./todo.js`.
  */
 
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
@@ -35,8 +33,8 @@ const SECTION_IN_PROGRESS = "── In Progress ──";
 const SECTION_COMPLETED = "── Completed ──";
 
 // ---------------------------------------------------------------------------
-// Public re-exports — pre-refactor consumers (overlay, tests, index.ts) keep
-// importing from `./todo.js`. New code may opt into deeper imports.
+// Public re-exports — overlay, tests, and index.ts keep importing from
+// `./todo.js`. New code may opt into deeper imports.
 // ---------------------------------------------------------------------------
 
 export { isTransitionValid } from "./state/invariants.js";

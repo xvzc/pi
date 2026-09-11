@@ -26,11 +26,7 @@ Rather than picking a strategy on your behalf, the model calls `ask_user_questio
 
 When the questionnaire begins waiting in an interactive TTY, it emits one standard terminal BEL (`\x07`). Your terminal configuration determines whether that appears as an audible alert, a visual alert, or nothing; redirected and non-TTY output is untouched.
 
-![Single question in the dialog: the tab strip reads Feature Type, Design Tab, Testing, Release, Submit; the question Which real development task are we planning right now? sits above four numbered options — Bug fix (Recommended), New feature, Refactor, Perf tuning — each with a one-line description, followed by the appended Type something. row](https://raw.githubusercontent.com/juicesharp/rpiv-mono/main/packages/rpiv-ask-user-question/docs/single-question.jpg)
-
-When the model asks several things at once, `Tab` moves between them and a Submit tab reviews everything before it goes back:
-
-![Submit tab of a four-question dialog: a Review your answers list showing Feature Type set to Bug fix and Testing set to Unit tests plus Integration tests, a warning naming Design Tab and Release as still unanswered, a picker offering Submit answers or Cancel, and a dim bottom key-hint row including n to add a note](https://raw.githubusercontent.com/juicesharp/rpiv-mono/main/packages/rpiv-ask-user-question/docs/submit-tab.jpg)
+When the model asks several things at once, `Tab` moves between them and a Submit tab reviews everything before it goes back.
 
 ## What you get
 
@@ -61,7 +57,7 @@ Malformed settings fall back to the defaults; an individual unusable value is si
 
 ## Reference
 
-- [Tool schema](docs/tool-schema.md) — parameters, limits, reserved labels, validation errors, the result envelope, and the `rpiv:ask-user:prompt` event.
+- [Tool schema](docs/tool-schema.md) — parameters, limits, reserved labels, validation errors, the result envelope, and the `pi-ask-user:prompt` event.
 - [Keyboard and layout](docs/keyboard.md) — every key, the rows the dialog appends, notes, collapse mode, and how previews and overflow adapt to terminal size.
 - [Configuration](docs/configuration.md) — settings location, the `collapseKey` grammar, the `guidance.*` prompt overrides, and how invalid values are handled.
 - [Hosts and runtime behavior](docs/hosts.md) — terminal vs RPC vs non-interactive, what degrades in each, and the load-failure envelopes.
@@ -80,10 +76,6 @@ No native dependencies, no compiler, no API keys — the extension makes no mode
 
 **`Ctrl+]` does nothing.** On keyboard layouts where `]` sits on the shifted layer (Latin American among them) the default is unreachable. Set `collapseKey` to something you can type, for example `"alt+o"`.
 
-## Related
-
-- [`@juicesharp/rpiv-pi`](https://www.npmjs.com/package/@juicesharp/rpiv-pi) — the umbrella package whose workflow skills use `ask_user_question` as their developer checkpoint. `/rpiv-setup` offers to install this extension.
-
 ## License
 
-MIT — see [LICENSE](https://github.com/juicesharp/rpiv-mono/blob/main/packages/rpiv-ask-user-question/LICENSE).
+MIT — see [LICENSE](LICENSE).

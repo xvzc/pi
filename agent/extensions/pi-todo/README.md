@@ -1,12 +1,6 @@
 # todo
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-<div align="center">
-  <a href="https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-todo">
-    <img src="https://raw.githubusercontent.com/juicesharp/rpiv-mono/main/packages/rpiv-todo/docs/cover.png" alt="rpiv-todo — a persistent todo overlay for Pi Agent, showing a task panel with completed, in-progress, and pending rows" width="50%">
-  </a>
-</div>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Give the model a task list you can see. `todo` adds a `todo` tool, a
 `/todos` command, and a live panel above the editor to
@@ -17,7 +11,7 @@ on long research → design → implement sessions.
 
 ## Install
 
-This local fork is loaded from `agent/extensions/pi-todo` via `agent/settings.json`.
+This local extension is loaded from `agent/extensions/pi-todo` via `agent/settings.json`.
 
 Restart your Pi session.
 
@@ -32,9 +26,7 @@ No todos yet. Ask the agent to add some!
 
 Then ask for something with several steps — "add a repository layer with tests,
 and track it as todos". The model calls `todo` and the panel appears above your
-input box, updating as work moves:
-
-![Todo overlay panel: a Todos (2/7) heading above two struck-through completed rows, one in-progress row with its activity label, and four pending rows](https://raw.githubusercontent.com/juicesharp/rpiv-mono/main/packages/rpiv-todo/docs/overlay.jpg)
+input box, updating as work moves.
 
 Press `ctrl+shift+t` to collapse the panel to its heading plus a one-line hint,
 and again to expand it. Run `/todos` at any time to print the full list grouped
@@ -83,17 +75,17 @@ Optional. Add settings under the top-level `"todo"` key in
 
 Missing or malformed settings fall back to these defaults. `todo` only reads
 this file — it never writes one. Full semantics:
-[Configuration](https://github.com/juicesharp/rpiv-mono/blob/main/packages/rpiv-todo/docs/configuration.md).
+[Configuration](docs/configuration.md).
 
 ## Reference
 
-- [`todo` tool reference](https://github.com/juicesharp/rpiv-mono/blob/main/packages/rpiv-todo/docs/tool-schema.md)
+- [`todo` tool reference](docs/tool-schema.md)
   — every `todo` parameter, the status machine, the response envelope, and the
   exact error strings.
-- [Configuration](https://github.com/juicesharp/rpiv-mono/blob/main/packages/rpiv-todo/docs/configuration.md)
+- [Configuration](docs/configuration.md)
   — settings location, option validation rules, and the accepted keybinding
   grammar.
-- [Overlay and `/todos`](https://github.com/juicesharp/rpiv-mono/blob/main/packages/rpiv-todo/docs/overlay.md)
+- [Overlay and `/todos`](docs/overlay.md)
   — overlay lifecycle, glyphs, overflow behavior, and `/todos` output.
 
 ## Requirements
@@ -102,12 +94,6 @@ this file — it never writes one. Full semantics:
 - An interactive session for the panel and `/todos`. Headless runs still get the
   `todo` tool; nothing is rendered.
 
-## Related
-
-- [`@juicesharp/rpiv-pi`](https://www.npmjs.com/package/@juicesharp/rpiv-pi)
-  ([source](https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-pi))
-  — the umbrella package that installs this extension alongside its siblings.
-
 ## License
 
-MIT — see [LICENSE](https://github.com/juicesharp/rpiv-mono/blob/main/packages/rpiv-todo/LICENSE).
+MIT — see [LICENSE](LICENSE).

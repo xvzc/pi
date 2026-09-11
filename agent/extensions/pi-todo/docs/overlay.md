@@ -1,13 +1,11 @@
 # Overlay and `/todos` display
 
-How
-[`@juicesharp/rpiv-todo`](https://www.npmjs.com/package/@juicesharp/rpiv-todo)
-renders the task list — when the overlay appears, what each glyph means, and how
-overflow is trimmed.
+How the local `todo` extension renders the task list — when the overlay appears,
+what each glyph means, and how overflow is trimmed.
 
 ## When the overlay exists
 
-The widget is mounted above the Pi editor under the key `rpiv-todos`.
+The widget is mounted above the Pi editor under the key `pi-todos`.
 
 | Stage | Condition |
 | --- | --- |

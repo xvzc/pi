@@ -1,5 +1,5 @@
 /**
- * rpiv-ask-user-question — Pi extension. Registers the `ask_user_question`
+ * ask-user-question — Pi extension. Registers the `ask_user_question`
  * tool: a structured option selector with an automatically appended
  * `Type something.` custom-answer row.
  *

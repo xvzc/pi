@@ -2,11 +2,9 @@
  * reconcile — mid-session lifecycle reconciliation for ask_user_question.
  *
  * Strips or re-adds the tool to the active set so it is invisible to the LLM
- * in non-interactive runs (no UI) and present in interactive ones. Mirrors the
- * advisor's reconcileAdvisorTool / registerAdvisorBeforeAgentStart pattern
- * (packages/rpiv-advisor/advisor/handlers.ts), simplified: ask_user_question's
- * only gating signal is ctx.hasUI (no model or executor blocklist), so it
- * reads the flag directly and omits the notify.
+ * in non-interactive runs (no UI) and present in interactive ones.
+ * ask_user_question's only gating signal is ctx.hasUI (no model or executor
+ * blocklist), so it reads the flag directly and omits the notify.
  *
  * RPC hosts (ctx.mode === "rpc": VSCode pendant, Zed, Paseo) are deliberately
  * NOT stripped: since PR #100 the tool renders there via the select/input

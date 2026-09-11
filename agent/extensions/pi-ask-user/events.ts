@@ -1,25 +1,14 @@
 /**
- * Public event contract for @juicesharp/rpiv-ask-user-question.
+ * Public event contract for the local ask-user-question extension.
  *
- * STABILITY POLICY — applies to every event in the `rpiv:*` namespace.
+ * Payloads must be JSON-safe: primitives, arrays, plain objects. No
+ * Set/Map/Date/class instances — payloads must survive JSON serialization
+ * when listeners forward them across process or network boundaries.
  *
- *   1. Channel names are immutable. Once shipped, never rename.
- *   2. Payload changes are append-only. Listeners MUST tolerate unknown
- *      fields. New fields ship as optional (`?:`).
- *   3. Breaking changes (rename, retype, remove a field; change emission
- *      semantics) require a NEW channel, e.g. `rpiv:ask-user:prompt.v2`,
- *      with dual-emit during a deprecation window.
- *   4. No `version` field inside payloads. Version via channel name only.
- *   5. Payloads must be JSON-safe: primitives, arrays, plain objects.
- *      No Set/Map/Date/class instances — payloads must survive JSON
- *      serialization when listeners forward them across process or
- *      network boundaries.
- *
- * Naming: `rpiv:<package-or-tool>:<phase>`, lowercase, hyphen-separated.
- * Aligns with Pi's `"my-extension:status"` example and UniPi's `unipi:*`.
+ * Naming: `pi-ask-user:<phase>`, lowercase, hyphen-separated.
  */
 
-export const ASK_USER_PROMPT_EVENT = "rpiv:ask-user:prompt" as const;
+export const ASK_USER_PROMPT_EVENT = "pi-ask-user:prompt" as const;
 
 export interface AskUserPromptEventPayload {
 	questions: ReadonlyArray<AskUserPromptQuestion>;
@@ -30,7 +19,7 @@ export interface AskUserPromptEventPayload {
  * RPC dialog walker). Cleared with `{ active: false }` in `finally` so listeners
  * can distinguish blocked-on-human from working.
  */
-export const ASK_USER_BLOCKED_EVENT = "rpiv:ask-user:blocked" as const;
+export const ASK_USER_BLOCKED_EVENT = "pi-ask-user:blocked" as const;
 
 export interface AskUserBlockedEventPayload {
 	/** True while input is awaited; false when the wait ends (answer, cancel, or error). */

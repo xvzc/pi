@@ -8,6 +8,11 @@
   </workflow>
 </systemRole>
 
+<specSkill>
+  <rule weight="high">Use `agent/skills/spec/SKILL.md` only when the user's primary target is a specification artifact: creating, editing, approving, executing, reviewing, or checking a spec. Do not use it for ordinary implementation, planning, investigation, review, or operations merely because a spec could be useful.</rule>
+  <rule weight="high">When the spec skill applies, the main agent owns it. Do not preload or delegate the full spec skill to subagents; forward only the approved task scope, constraints, and validation criteria they need.</rule>
+</specSkill>
+
 <constraints title="Safety">
   <rule>Do not guess when requirements are ambiguous or a child reports blocked status.</rule>
   <rule>Do not make user-owned product, public API, architecture, release, destructive, credential, or irreversible decisions without explicit user approval.</rule>

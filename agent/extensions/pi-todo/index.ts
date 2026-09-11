@@ -1,12 +1,8 @@
 /**
- * rpiv-todo — Pi extension. Registers the `todo` tool, `/todos` slash
+ * todo — Pi extension. Registers the `todo` tool, `/todos` slash
  * command, and the persistent TodoOverlay widget.
  *
  * UI chrome strings are fixed English literals.
- *
- * Extracted from rpiv-pi@7525a5d. Tool name "todo" and widget key
- * "rpiv-todos" preserved verbatim so existing session history replays
- * correctly after upgrade.
  */
 
 import type { ExtensionAPI, ExtensionUIContext } from "@earendil-works/pi-coding-agent";
@@ -87,10 +83,8 @@ function isStaleCtxError(e: unknown): boolean {
 
 /**
  * Render a caught `unknown` as a human-readable message — the `instanceof Error`
- * dance collapsed to one place. Local copy of the `formatError` in
- * packages/rpiv-workflow/internal-utils.ts:56-58 (that module disclaims its
- * public surface, so the cross-package import is not available). M2 boundary
- * duplication: tracked as a documented-constant seam.
+ * dance collapsed to one place. Kept local because it is only needed for this
+ * extension's warning path.
  */
 function formatError(e: unknown): string {
 	return e instanceof Error ? e.message : String(e);
@@ -243,7 +237,7 @@ export default function (pi: ExtensionAPI, importOverlay: TodoOverlayImporter = 
 			// stale-namespace error still propagates: it never self-heals, and the
 			// user needs its restart guidance.
 			if (isStaleOverlayModuleError(e)) throw e;
-			console.warn(`[rpiv-todo] overlay refresh failed (will retry on next update): ${formatError(e)}`);
+			console.warn(`[pi-todo] overlay refresh failed (will retry on next update): ${formatError(e)}`);
 		}
 	});
 

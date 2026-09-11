@@ -331,7 +331,7 @@ const HANDLERS: { [K in QuestionnaireAction["kind"]]: Handler<K> } = {
 };
 
 /**
- * Pure reducer: (state, action, ctx) → (state, Effect[]). Mirrors `rpiv-todo`'s `applyTaskMutation`.
+ * Pure reducer: (state, action, ctx) → (state, Effect[]). Uses the same reducer/effect split as the todo extension.
  * Delegates to `HANDLERS` — per-kind handlers above are pure, named, and individually testable.
  * `ignore` is also handled outside the reducer by `handleIgnoreInline` in the runtime fast path.
  */

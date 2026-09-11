@@ -32,7 +32,7 @@ export const STATUS_GLYPH: Record<TaskStatus, string> = {
 /**
  * Color palette for the renderResult status echo. `deleted` uses `muted` so a
  * successful delete is visually distinct from the error branch (which uses
- * `error` + `✗`). Mirrors pre-refactor `todo.ts:444-450`.
+ * `error` + `✗`). Kept local to make status rendering explicit.
  */
 export const STATUS_COLOR: Record<TaskStatus, "dim" | "warning" | "success" | "muted"> = {
 	pending: "dim",
@@ -43,7 +43,7 @@ export const STATUS_COLOR: Record<TaskStatus, "dim" | "warning" | "success" | "m
 
 /**
  * Per-action prefix glyph for renderCall. `+` create, `→` update, `×` delete,
- * `›` get, `☰` list, `∅` clear. Pre-refactor `todo.ts:457-464`.
+ * `›` get, `☰` list, `∅` clear.
  */
 export const ACTION_GLYPH: Record<TaskAction, string> = {
 	create: "+",
@@ -58,7 +58,7 @@ export const ACTION_GLYPH: Record<TaskAction, string> = {
  * Glyph for the persistent overlay's per-task row. Differs from `STATUS_GLYPH`
  * for `completed` (`✓` vs `●`) and `deleted` (`✗` vs `⊘`) because the
  * overlay caller never renders a `deleted` row but uses `✗` in its
- * error-toned palette. Mirrors pre-refactor `todo-overlay.ts:23-33`.
+ * error-toned palette. Kept local to make overlay colors explicit.
  */
 export function overlayStatusGlyph(status: TaskStatus, theme: Theme): string {
 	switch (status) {
@@ -99,7 +99,7 @@ export function formatOverlayTaskLine(t: Task, theme: Theme, showId: boolean): s
 
 /**
  * Format a single task line for the `/todos` slash command (no glyph color,
- * indented bullet prefix). Pre-refactor `todo.ts:670-674`.
+ * indented bullet prefix).
  */
 export function formatCommandTaskLine(t: Task, glyph: string): string {
 	const form = t.status === "in_progress" && t.activeForm ? ` (${sanitizeTerminalText(t.activeForm)})` : "";
@@ -113,8 +113,8 @@ export function formatCommandTaskLine(t: Task, glyph: string): string {
 
 /**
  * `renderCall` body. Receives the parsed args, the theme, and the live
- * `TaskState` (resolved by the caller via `getState()`). Returns a `Text`
- * node identical to pre-refactor `todo.ts:507-525`.
+ * `TaskState` (resolved by the caller via `getState()`). Returns the compact
+ * call summary shown in the transcript.
  */
 export function renderTodoCall(
 	args: TaskMutationParams & { action: TaskAction },
@@ -141,8 +141,7 @@ export function renderTodoCall(
 /**
  * `renderResult` body. Inspects `details` to pick the per-action status echo
  * (only `create`/`update`/`delete` advertise a status; `list`/`get`/`clear`
- * fall back to plain `✓`). Identical visual output to pre-refactor
- * `todo.ts:533-565`.
+ * fall back to plain `✓`).
  */
 export function renderTodoResult(result: { details?: unknown }, theme: Theme): Text {
 	const details = result.details as TaskDetails | undefined;

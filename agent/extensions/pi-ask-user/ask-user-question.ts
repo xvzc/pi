@@ -82,15 +82,14 @@ const ERROR_SESSION_LOAD_FAILED =
 const ERROR_STALE_MODULE_CACHE =
 	"Error: the questionnaire UI cannot load — the host's module cache went stale after an earlier failed load (typically dependencies replaced on disk mid-session). This is unrecoverable within the current Pi process. The user never saw the questions — do NOT treat this as a decline. Ask the questions as plain chat text instead, and tell the user to restart Pi to restore this tool.";
 
-/** Standard terminal bell — same byte rpiv-warp exports as OSC_TERMINATOR. */
+/** Standard terminal BEL byte. */
 export const BEL = "\x07";
 
 /**
  * Emit one portable terminal attention signal without touching redirected output.
- * Writes to stdout rather than rpiv-warp's `/dev/tty` transport: the `isTTY` gate
- * both proves an interactive terminal owns the coming wait and keeps the byte out
- * of piped RPC transports (VS Code pendant, Zed) — a `/dev/tty` write would ring
- * even when the questionnaire renders in a remote host's own UI.
+ * Writes to stdout: the `isTTY` gate both proves an interactive terminal owns
+ * the coming wait and keeps the byte out of piped RPC transports (VS Code
+ * pendant, Zed).
  */
 function emitTerminalAttention(): void {
 	try {
@@ -100,7 +99,7 @@ function emitTerminalAttention(): void {
 	}
 }
 
-/** Delay before the background session-graph pre-warm; mirrors rpiv-workflow's /wf prewarm. */
+/** Delay before the background session-graph pre-warm so startup work can settle. */
 export const PREWARM_DELAY_MS = 2000;
 
 type SessionModule = typeof import("./state/questionnaire-session.js");

@@ -2,9 +2,9 @@ import type { Task } from "../tool/types.js";
 import { EMPTY_STATE, type TaskState } from "./state.js";
 
 /**
- * Per-session live state. Pre-refactor this was a single scalar `let state`
- * cell; it is now a Map partitioned by session id so a detached/child session
- * (distinct sid) can never read or clobber another session's tasks.
+ * Per-session live state. A Map partitioned by session id prevents a
+ * detached/child session (distinct sid) from reading or clobbering another
+ * session's tasks.
  *
  * The Map is the single mutation seam — only `commitState` / `replaceState` /
  * `evictSession` write it; the reducer (`state/state-reducer.ts`) stays pure.

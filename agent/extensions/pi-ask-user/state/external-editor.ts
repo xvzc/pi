@@ -37,7 +37,7 @@ function runEditor(command: string, file: string): Promise<void> {
  * and one-trailing-newline normalization intentionally match Pi's main editor flow.
  */
 export async function editWithExternalEditor(tui: ExternalEditorTui, command: string, value: string): Promise<string> {
-	const tempDir = mkdtempSync(join(tmpdir(), "rpiv-ask-user-question-"));
+	const tempDir = mkdtempSync(join(tmpdir(), "pi-ask-user-question-"));
 	const tempFile = join(tempDir, "answer.md");
 	let tuiStopped = false;
 

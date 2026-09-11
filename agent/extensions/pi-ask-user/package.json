@@ -13,7 +13,6 @@
     "./events": "./events.ts"
   },
   "license": "MIT",
-  "author": "juicesharp",
   "scripts": {
     "test": "vitest run"
   },

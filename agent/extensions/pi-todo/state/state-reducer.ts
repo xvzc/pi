@@ -6,8 +6,7 @@ import { detectCycle } from "./task-graph.js";
 /**
  * Reducer outcome. Closed tagged union — adding a new action requires extending
  * this union AND the response-envelope's `formatContent` switch (compiler-
- * enforced exhaustive). Mirrors the `Effect` pattern in
- * `packages/rpiv-ask-user-question/state/state-reducer.ts:14-30`.
+ * enforced exhaustive).
  *
  * `error` carries the message in-band so callers can pattern-match on
  * `op.kind === "error"` without a side-channel boolean.
@@ -65,10 +64,9 @@ function taskChanged(before: Task, after: Task): boolean {
 }
 
 /**
- * Pure reducer: (state, action, params) → (state, op). Mirrors the
- * `applyTaskMutation` of pre-refactor `todo.ts` minus content/details
- * formatting; the response envelope (`tool/response-envelope.ts`) owns
- * formatting, the store (`state/store.ts`) owns commit.
+ * Pure reducer: (state, action, params) → (state, op). The response envelope
+ * (`tool/response-envelope.ts`) owns formatting, the store (`state/store.ts`)
+ * owns commit.
  *
  * Validation is in-line: structural guards (`subject required`, `id required`,
  * `at least one mutable field`) plus state-aware checks (transition legality,

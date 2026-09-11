@@ -24,7 +24,7 @@ export interface RenderInlineInputOptions {
 
 /**
  * Resolve the cursor offset, falling back to end-of-buffer for `undefined`/out-of-range.
- * Mirrors the original wrapping-select.resolveOffset exactly.
+ * Matches wrapping-select cursor behavior exactly.
  */
 function resolveCursorOffset(buffer: string, requested: number | undefined): number {
 	if (requested !== undefined && requested >= 0 && requested <= buffer.length) return requested;

@@ -80,8 +80,7 @@ const SPECIAL_KEYS = new Set([
 
 const MODIFIERS = new Set(["ctrl", "shift", "alt", "super"]);
 
-/** Validate a collapse-key spec against pi-tui's KeyId grammar (verbatim port from
- *  rpiv-ask-user-question). Exported for unit tests. */
+/** Validate a collapse-key spec against pi-tui's KeyId grammar. Exported for unit tests. */
 export function isValidCollapseKeySpec(spec: string): boolean {
 	// Mirror pi-tui's KeyId grammar strictly: zero or more distinct modifiers, then a
 	// base key that is a single printable character or a named special key. A loose

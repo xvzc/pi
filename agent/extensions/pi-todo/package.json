@@ -5,24 +5,10 @@
   "keywords": [
     "pi-package",
     "pi-extension",
-    "rpiv",
     "todo"
   ],
   "type": "module",
   "license": "MIT",
-  "author": "juicesharp",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/juicesharp/rpiv-mono.git",
-    "directory": "packages/rpiv-todo"
-  },
-  "homepage": "https://github.com/juicesharp/rpiv-mono/tree/main/packages/rpiv-todo#readme",
-  "bugs": {
-    "url": "https://github.com/juicesharp/rpiv-mono/issues"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "test": "vitest run"
   },
@@ -50,7 +36,6 @@
     "view/format.ts"
   ],
   "pi": {
-    "image": "https://raw.githubusercontent.com/juicesharp/rpiv-mono/main/packages/rpiv-todo/docs/cover.png",
     "extensions": [
       "./index.ts"
     ]
