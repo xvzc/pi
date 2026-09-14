@@ -7,11 +7,10 @@
     "npm:pi-web-access",
     "npm:pi-minimal-footer",
     "npm:pi-startup-header",
-    "npm:@tintinweb/pi-subagents@0.19.0"
-  ],
-  "extensions": [
-    "extensions/pi-todo",
-    "extensions/pi-ask-user"
+    "npm:@tintinweb/pi-subagents@0.19.0",
+    "npm:pi-tool-display",
+    "npm:pi-ask-user",
+    "npm:@tintinweb/pi-tasks"
   ],
   "theme": "neon-green",
   "tuiMode": "fullscreen",
@@ -27,10 +26,7 @@
     "placement": "below",
     "welcome": false
   },
-  "todo": {
-    "collapseKey": "off"
-  },
-  "ask-user-question": {
-    "collapseKey": "off"
+  "pi-ask-user": {
+    "displayMode": "inline"
   }
 }
