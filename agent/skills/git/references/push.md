@@ -27,12 +27,6 @@ git push
 git push --set-upstream origin <branch>
 ```
 
-## Safety
-
-- Never force-push without explicit approval.
-- If the push is rejected, report the remote state and ask before rebasing,
-  merging, or force-pushing.
-
 ## CI Monitoring
 
 For CI monitoring after a successful push, follow `references/ci.md`.
@@ -41,3 +35,9 @@ For CI monitoring after a successful push, follow `references/ci.md`.
 
 State the remote, branch, pushed commit range, and the resulting remote URL if
 available.
+
+## Safety
+
+- If the push is rejected, report the remote state and ask before rebasing,
+  merging, or force-pushing.
+
