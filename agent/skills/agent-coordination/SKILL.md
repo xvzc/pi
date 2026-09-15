@@ -9,7 +9,7 @@ In a multi-part task that includes subagent-owned tasks, load this skill immedia
 before executing the relevant subagent-owned task. Do not load it merely because
 such a task may be executed later.
 
-The lead owns decomposition, dispatch, follow-up, output relay, review loops,
+The main agent owns decomposition, dispatch, follow-up, output relay, review loops,
 acceptance, and integration. Children execute bounded tasks and return results or
 questions; they do not create orchestration tasks or delegate work. This skill does
 not authorize additional scope.
@@ -31,7 +31,7 @@ The current role conventions are:
 
 Confirm the role is available and its tools permit the requested work. A read-only
 role with bash is still read-only; do not assign installs, service starts, generators,
-or tests that write state to it. Have the lead or an authorized writer perform them.
+or tests that write state to it. Have the main agent or an authorized writer perform them.
 
 Review hard task dependencies before dispatch. Stabilize shared APIs, schemas, and
 other contracts before dependent modules proceed. Run independent tasks concurrently
@@ -52,7 +52,7 @@ Include the relevant items below:
 - Permitted scope, non-goals, read/write authority, and existing changes to preserve.
 - Shared contracts and verified dependency outputs.
 - Validation criteria and commands where known.
-- Stop conditions and user-owned decisions the child must return to the lead.
+- Stop conditions and user-owned decisions the child must return to the main agent.
 - Output contract: status, findings/changed files, checks and evidence, limitations,
   questions, and branch/artifact details where relevant.
 
@@ -63,7 +63,7 @@ material with its source and purpose; distinguish verified facts from a child's
 unverified claims. Supply the minimum useful excerpts or files.
 
 Current role agents have `skills: false`. Do not assume they know skills loaded by
-the lead. Pass relevant constraints and checks explicitly, not the full lead workflow
+the main agent. Pass relevant constraints and checks explicitly, not the full main-agent workflow
 or workflow-specific procedure. Keep role restrictions in force. Use their existing status contract
 (`done`, `question`, `blocked`) without imposing a contradictory second format.
 
@@ -83,7 +83,7 @@ an available override is justified by the task and permitted by the runtime.
 
 For child questions and blockers:
 
-1. Determine whether the lead can resolve them by bounded verification or an existing
+1. Determine whether the main agent can resolve them by bounded verification or an existing
    approved decision. Ask the user only for unresolved user-owned choices.
 2. Preserve the child context where possible. Use `steer_subagent` for a running child;
    use `Agent` with `resume` for a completed retained child.
@@ -95,7 +95,7 @@ a scoped retry is justified. Do not repeatedly send the same unresolved assignme
 
 ## 4. Isolate writers and integrate
 
-At most one writer may be active in a workspace, including the lead. Read-only work
+At most one writer may be active in a workspace, including the main agent. Read-only work
 can overlap only if reading a changing workspace will not invalidate its conclusions;
 for acceptance reviews, prefer a stable diff or snapshot.
 
@@ -108,7 +108,7 @@ For concurrent writers:
 - Follow the runtime's preservation/cleanup contract. Collect branch/base information
   and inspect actual changes before integration; do not assume output paths survive cleanup.
 
-The lead reconciles outputs and checks conflicts, shared contracts, user changes,
+The main agent reconciles outputs and checks conflicts, shared contracts, user changes,
 and scope. Integrate only authorized changes and run combined validation after the
 merge of work, not merely each child's isolated tests. Do not publish, merge to a
 shared branch, or perform destructive cleanup without the appropriate authorization.

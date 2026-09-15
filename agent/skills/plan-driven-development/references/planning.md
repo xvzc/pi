@@ -13,7 +13,7 @@ assuming their answers.
 
 ## Deciding the execution shape
 
-Assign work to the lead or appropriate subagent roles. Decompose large work
+Assign work to the main agent or appropriate subagent roles. Decompose large work
 where task boundaries are clear, not merely to increase parallelism.
 
 Choose execution arrangements for each task:
@@ -43,7 +43,7 @@ Record the decisions above in a concise, executable plan:
 - Validation commands or observable checks, their scope, and their owners.
 - Approvals, stop conditions, and known blockers.
 
-When outputs must be combined, include explicit lead-owned integration and
+When outputs must be combined, include explicit main-agent-owned integration and
 integrated testing tasks. Specify inputs, dependencies, integration scope,
 conflict or contract-mismatch handling, and combined-result checks. Individual
 task checks do not replace integrated tests.

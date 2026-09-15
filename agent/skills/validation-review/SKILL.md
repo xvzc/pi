@@ -1,6 +1,6 @@
 ---
 name: validation-review
-description: Lead-owned procedure for validating non-lightweight changes, deciding when independent review is needed, and resolving review findings through bounded fixes and revalidation. Load immediately before reporting completion or a review result for meaningful-risk work. Small mechanical work only needs proportionate checks.
+description: Main-agent-owned procedure for validating non-lightweight changes, deciding when independent review is needed, and resolving review findings through bounded fixes and revalidation. Load immediately before reporting completion or a review result for meaningful-risk work. Small mechanical work only needs proportionate checks.
 ---
 
 # Validation and Review
@@ -37,14 +37,14 @@ short self-check is useful and permitted; it is not independent review.
 
 Consider an independent reviewer for significant behavior changes, public contracts,
 security or data integrity risk, subtle concurrency, multi-module integration, or
-uncertain validation coverage. Small, well-covered changes may need only the lead's
+uncertain validation coverage. Small, well-covered changes may need only the main agent's
 checks. Honor an explicit direct-only request and report the lack of independent
 review; if it is essential for safe acceptance, explain the limitation and ask.
 
 Before delegation, brief a reviewer with scope, intent, base/head or stable diff,
 relevant constraints, evidence already collected, and specific uncertainties. Do
 not ask a read-only reviewer to run state-changing tests; use an authorized writer
-or the lead for those checks.
+or the main agent for those checks.
 
 ## 3. Evaluate findings
 

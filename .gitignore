@@ -6,6 +6,7 @@
 
 # direnv / local Nix runtime
 .direnv/
+.devenv/
 
 # Pi local secrets and machine/session state
 agent/auth.json

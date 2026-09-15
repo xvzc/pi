@@ -52,7 +52,7 @@ calls. Task records are execution-state artifacts, not planning artifacts.
   subagent handle. Keep the prefix synchronized in both fields.
 - Use specific task descriptions: scope, non-goals, expected output,
   validation, risks, and stop conditions as relevant. Never store secrets.
-- Set the responsible owner agent when creating the task (`main` for lead-owned
+- Set the responsible owner agent when creating the task (`main` for main-agent-owned
   work; the assigned agent role or name for delegated work).
 - Use dependencies only for actual task dependencies. When a task cannot
   start without a predecessor's output, record it with `addBlockedBy` immediately
