@@ -8,6 +8,7 @@
 
   enterShell = # sh
     ''
+      export PI_CODING_AGENT_DIR="$HOME/.config/pi/agent"
       export name="devenv:pi"
     '';
 }

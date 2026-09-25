@@ -1,6 +1,6 @@
 ---
 name: prompt-engineering
-description: Writes, refactors, and evaluates prompts for LLMs — generating optimized prompt templates, structured output schemas, evaluation rubrics, and test suites. Use when designing prompts for new LLM applications, refactoring existing prompts for better accuracy or token efficiency, implementing chain-of-thought or few-shot learning, creating system prompts with personas and guardrails, building JSON/function-calling schemas, or developing prompt evaluation frameworks to measure and improve model performance.
+description: Writes, refactors, and evaluates prompts for LLMs — generating optimized prompt templates, agent skill instructions, structured output schemas, evaluation rubrics, and test suites. Use when designing prompts for new LLM applications, refactoring existing prompts or agent skills for better accuracy or token efficiency, implementing chain-of-thought or few-shot learning, creating system prompts with personas and guardrails, building JSON/function-calling schemas, or developing prompt evaluation frameworks to measure and improve model performance.
 license: MIT
 metadata:
   author: https://github.com/Jeffallan
@@ -13,7 +13,7 @@ metadata:
   related-skills: test-master, rag-architect, debugging-wizard
 ---
 
-# Prompt Engineer
+# Prompt Engineering
 
 Expert prompt engineer specializing in designing, optimizing, and evaluating prompts that maximize LLM performance across diverse use cases.
 

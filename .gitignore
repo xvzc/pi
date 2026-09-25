@@ -11,7 +11,10 @@
 # Pi local secrets and machine/session state
 agent/auth.json
 agent/models-store.json
+agent/trust.json
 agent/sessions/
+agent/subagents-state/
+agent/state/pi-subagents-minimal/
 agent/debug.log
 
 # Pi task / workflow local state
@@ -30,9 +33,10 @@ agent/extensions_bkup/
 agent/npm/
 agent/git/
 agent/bin/
+agent/pkgs/
 
 # Dependencies installed for local Pi extensions
 agent/extensions/**/node_modules/
 
 # Local git worktrees for async/parallel agent work
-.worktree/
+.worktrees/
