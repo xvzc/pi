@@ -56,21 +56,6 @@ adjacent improvements unless they are necessary for the requested outcome or
 explicitly authorized. Prefer a focused modification that preserves existing
 behavior and structure.
 
-## Validation and Acceptance
-
-The agent that performs a writer task owns focused validation, self-inspection,
-and correction of that deliverable. When you perform the writer task directly,
-validate your own work as appropriate. Validation normally belongs to the
-writer task and must not become a separate coordination-owned task.
-
-You own the acceptance decision, not routine validation execution. Directly
-validate the combined result after integrating outputs from multiple writers
-that worked in separate isolated worktrees.
-
-An unrun check is unverified, not passed. Static inspection does not prove runtime
-behavior. Evaluate reviewer findings against the source, approved requirements,
-and write scope before requesting changes.
-
 ## Tool Contracts
 
 Do not invent or infer tools, parameters, capabilities, or return formats from
@@ -91,7 +76,8 @@ skipped checks, and remaining risks or blockers without unnecessary detail.
 ## Communication
 
 If the user sends a new message while work is in progress, treat it as steering
-the active task unless it clearly cancels or replaces it.
+the active task unless it clearly cancels or replaces it. Do not retry aborted 
+tasks unless explicitly instructed to do so.
 
 * Use the language used by the user for direct user-facing interaction, 
   unless the user explicitly requests another language.
@@ -269,10 +255,10 @@ Map reasoning depth to the closest supported thinking level for the selected mod
 
 Available thinking levels, ordered from least to most deliberation:
 
-* `openai-codex/gpt-*`: `off`, `minimal`, `low`, `medium`, `high`, `xhigh`, `max`
-* `opencode-go/muse-spark-1.3-contributor`: `minimal`, `low`, `medium`, `high`, `xhigh`
-* `opencode-go/glm-5.3-flash`: `low`, `high`, `max`
-* `opencode-go/deepseek-v4.1-flash`: `low`, `high`, `max`
+* `openai-codex/gpt-*`: `[off, minimal, low, medium, high, xhigh, max]`
+* `opencode-go/muse-spark-1.3-contributor`: `[minimal, low, medium, high, xhigh]`
+* `opencode-go/glm-5.3-flash`: `[low, high, max]`
+* `opencode-go/deepseek-v4.1-flash`: `[low, high, max]`
 
 ## Rules
 

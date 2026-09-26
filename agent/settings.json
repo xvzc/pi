@@ -13,12 +13,12 @@
   "showHardwareCursor": true,
   "packages": [
     "npm:pi-mcp-adapter",
-    "npm:pi-web-access",
+    "npm:pi-web-access@0.30.0",
     "npm:pi-minimal-footer",
     "npm:pi-startup-header",
     "npm:pi-ask-user",
-    "npm:@xvzc/pi-tasks",
-    "npm:@xvzc/pi-subagents-minimal"
+    "./pkgs/pi-tasks",
+    "./pkgs/pi-subagents-minimal"
   ],
 
   "defaultProvider": "openai-codex",
