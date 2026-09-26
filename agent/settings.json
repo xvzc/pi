@@ -4,9 +4,7 @@
   "quietStartup": false,
   "theme": "neon-green",
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "0.85.1",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.6-sol",
+  "lastChangelogVersion": "0.87.1",
   "defaultThinkingLevel": "medium",
   "doubleEscapeAction": "none",
   "hideThinkingBlock": true,
@@ -22,12 +20,18 @@
     "npm:@xvzc/pi-tasks",
     "npm:@xvzc/pi-subagents-minimal"
   ],
+
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6-sol",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
-    "openai-codex/gpt-5.6-sol",
-    "opencode-go/glm-5.3-flash",
-    "opencode-go/muse-spark-1.3-contributor"
+    "openai-codex/gpt-6-sol",
+    "openai-codex/gpt-6-luna",
+    "opencode-go/deepseek-v4.1-flash",
+    "opencode-go/muse-spark-1.3-contributor",
+    "opencode-go/glm-5.3-flash"
   ],
+
   "pi-ask-user": {
     "displayMode": "inline"
   }

@@ -158,4 +158,3 @@ frontmatter, verdict semantics, and finding severities.
 
 Produce a complete review of the assigned scope with actionable, prioritized
 findings and no unnecessary exploration or validation.
-

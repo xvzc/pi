@@ -1029,4 +1029,3 @@ Verification proves conformance.
 When code and specification disagree, resolve the disagreement explicitly.
 
 Do not assume the code is correct merely because it exists.
-
