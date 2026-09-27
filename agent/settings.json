@@ -17,8 +17,8 @@
     "npm:pi-minimal-footer",
     "npm:pi-startup-header",
     "npm:pi-ask-user",
-    "./pkgs/pi-tasks",
-    "./pkgs/pi-subagents-minimal"
+    "npm:@xvzc/pi-tasks",
+    "npm:@xvzc/pi-subagents-minimal"
   ],
 
   "defaultProvider": "openai-codex",
