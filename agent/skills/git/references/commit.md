@@ -57,7 +57,16 @@ git diff
 git status --porcelain
 ```
 
-### 2. Stage Files (if needed)
+### 2. Choose Branch
+
+Check the current branch (`git branch --show-current`). If it is `main` or
+`master`, create and switch to a separate topic branch with the existing
+changes (`git switch -c <topic-branch>`) before committing, unless the user
+explicitly instructed you to commit on `main` or `master`. Preserve staged and
+unstaged changes; if switching would risk losing or mixing changes, stop and ask
+rather than discarding them.
+
+### 3. Stage Files (if needed)
 
 If nothing is staged or you want to group changes differently:
 
@@ -75,7 +84,7 @@ git add -p
 
 **Never commit secrets** (.env, credentials.json, private keys).
 
-### 3. Generate Commit Message
+### 4. Generate Commit Message
 
 Analyze the diff to determine:
 
@@ -83,7 +92,7 @@ Analyze the diff to determine:
 - **Scope**: What area/module is affected?
 - **Description**: One-line summary of what changed (present tense, imperative mood, <72 chars)
 
-### 4. Execute Commit
+### 5. Execute Commit
 
 ```bash
 # Single line

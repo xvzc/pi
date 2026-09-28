@@ -3,7 +3,10 @@
 ## Authorization
 
 Pushing changes affects a remote repository. Push only after the user explicitly
-approves the target remote and branch.
+approves the target remote and branch. Unless the user explicitly requests
+another destination, push to a separate topic branch, not `main` or `master`.
+Push to `main` or `master` only when the user explicitly requests and approves
+that destination.
 
 ## Preflight
 
@@ -20,11 +23,11 @@ changes, secrets, or generated artifacts.
 ## Push
 
 ```bash
-# Existing upstream
-git push
+# Default: push the topic branch to the approved remote
+git push --set-upstream origin <topic-branch>
 
-# First push for the current branch
-git push --set-upstream origin <branch>
+# Only when the user explicitly requests and approves a direct push to origin/main
+git push origin HEAD:main
 ```
 
 ## CI Monitoring
