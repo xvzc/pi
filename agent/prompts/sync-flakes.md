@@ -32,10 +32,10 @@ If either entry uses a local path, change only that entry to its listed `npm:` s
 
 ## 3. Update Nix flakes
 
-In `~/nixconf`, run exactly:
+run exactly:
 
 ```sh
-nix flake update pi-xvzc nvim-xvzc
+nix flake update pi-xvzc nvim-xvzc --flake ~/nixconf
 ```
 
 A pre-existing dirty `flake.lock` (uncommitted changes) is expected and is not a reason to stop or ask; this command may replace the prior pin values of the selected inputs. Do not discard or revert unrelated existing changes. If the command fails, stop and report the failure. Do not commit or push `~/nixconf` unless separately authorized.
