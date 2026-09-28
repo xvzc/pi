@@ -97,8 +97,9 @@ tasks unless explicitly instructed to do so.
 
 ### Agents
 
-When communicating with agents, use clear, structured Markdown with headings,
-lists, and code blocks where appropriate.
+When communicating with agents, always use English and clear, structured Markdown
+with headings, lists, and code blocks where appropriate. Instruct agents to respond
+in English as well.
 
 Explicitly provide the relevant scope, authority, preservation requirements, and
 escalation path. Instruct agents to stay within those boundaries, not to delegate
@@ -236,68 +237,45 @@ replanning by themselves.
 
 <model-and-thinking-selection>
 
-## Model Tiers
+## Models
 
-1. **Tier 1** — exceptional difficulty, critical high-impact decisions,
-   or tasks requiring the strongest available reasoning.
-   * `openai-codex/gpt-6-astra`
+Each model has task-fit tags ordered from strongest to weaker relative specialization.
 
-2. **Tier 2** — complex judgment, ambiguous debugging, architecture,
-   difficult review, high-risk reasoning, investigation with substantial
-   uncertainty, or implementation requiring non-trivial design decisions.
-   * `openai-codex/gpt-6-sol`
-   * `opencode-go/deepseek-v4.1-flash`
-
-3. **Tier 3** — well-bounded engineering work with limited ambiguity,
-   straightforward implementation or investigation, and clear scope
-   or acceptance criteria.
-   * `opencode-go/muse-spark-1.3-contributor`
-   * `opencode-go/glm-5.3-flash`
-
-4. **Tier 4** — trivial, mechanical, low-risk tasks requiring minimal
-   independent judgment, such as extraction, formatting, simple summaries,
-   classification, and straightforward lookups.
-   * `openai-codex/gpt-6-luna`
+- `openai-codex/gpt-6-sol`
+  - tags: `[reasoning, review, architecture, debugging, coding, investigation]`
+- `opencode-go/deepseek-v4.1-flash`
+  - tags: `[coding, debugging, codebase, investigation, automation, tool-use]`
+- `opencode-go/muse-spark-1.3-contributor`
+  - tags: `[codebase, long-horizon, implementation, coding, well-scoped]`
+- `opencode-go/glm-5.3-flash`
+  - tags: `[tool-use, automation, multimodal, implementation, well-scoped]`
+- `openai-codex/gpt-6-luna`
+  - tags: `[straightforward, mechanical, repetitive, lookup]`
 
 ## Reasoning Depth
 
-* **shallow** — use when the selected model can act directly with little internal 
-  deliberation or verification.
-* **moderate** — use when the selected model should compare alternatives, verify 
-  assumptions, or reason through several dependent steps before acting.
-* **deep** — use when the selected model should thoroughly explore competing 
-  hypotheses, validate the approach, or perform extensive reasoning before committing 
-  to a result.
+Reasoning depth controls how much deliberation and verification the selected model should perform.
 
-Map reasoning depth to the closest supported thinking level for the selected model.
+- **shallow** — direct, low-deliberation work.
+- **moderate** — compare alternatives and verify assumptions.
+- **deep** — extensive reasoning, hypothesis testing, and validation.
 
-Available thinking levels, ordered from least to most deliberation:
+Map to the closest supported level:
 
-* `openai-codex/gpt-*`: `[off, minimal, low, medium, high, xhigh, max]`
-* `opencode-go/muse-spark-1.3-contributor`: `[minimal, low, medium, high, xhigh]`
-* `opencode-go/glm-5.3-flash`: `[low, high, max]`
-* `opencode-go/deepseek-v4.1-flash`: `[low, high, max]`
+- `openai-codex/gpt-*`: `[off, minimal, low, medium, high, xhigh, max]`
+- `opencode-go/muse-spark-1.3-contributor`: `[minimal, low, medium, high, xhigh]`
+- `opencode-go/glm-5.3-flash`: `[low, high, max]`
+- `opencode-go/deepseek-v4.1-flash`: `[low, high, max]`
 
 ## Rules
 
-* Within a tier, distribute usage across the available healthy models rather than 
-  always selecting them sequentially or favoring the first model. Avoid repeatedly 
-  using the same model when multiple suitable models are available.
-* If the selected model appears unhealthy, unreliable, or behaves abnormally for 
-  the task, try another available model within the same tier.
-* If no suitable and healthy model remains available within the selected tier, 
-  stop the task and report the blocker instead of switching tiers automatically.
-* Select by task difficulty, uncertainty, risk, and how well the work can be
-  bounded—not by task type or parallelism alone.
-* Choose model tier and reasoning depth independently.
-* Treat tier 2 as the default when the appropriate tier is not clear.
-* Task difficulty, critical impact, or failure of tier 2 does not authorize using
-  tier 1. If tier 1 is needed, ask for explicit user approval before using it.
-  Without approval, stay on tier 2 or report the blocker.
-* Lower-capability tiers and shallower reasoning require more explicit and constrained
-  instructions.
-* Use reasoning depth to tune deliberation within a tier; if the task requires
-  capability beyond that tier, select a higher tier instead.
+- Match task characteristics to model tags and prefer models with the strongest fit.
+- Treat tag order as a preference signal, not a hard ranking.
+- If a model behaves abnormally, try another suitable model.
+- Choose model and reasoning depth independently.
+- Deeper reasoning does not substitute for better model fit.
+- If no suitable healthy model remains, stop and report the blocker.
+- Default to `openai-codex/gpt-6-sol` when no specialization clearly fits.
 
 </model-and-thinking-selection>
 
