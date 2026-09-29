@@ -245,6 +245,9 @@ replanning by themselves.
 
 Each model has task-fit tags ordered from strongest to weaker relative specialization.
 
+- `openai-codex/gpt-6-astra`
+  - tags: `[reasoning, architecture, review, debugging, coding, investigation]`
+  - may be selected only when explicitly requested by the user
 - `openai-codex/gpt-6-sol`
   - tags: `[reasoning, review, architecture, debugging, coding, investigation]`
 - `opencode-go/deepseek-v4.1-flash`
@@ -273,6 +276,9 @@ Map to the closest supported level:
 
 ## Rules
 
+- When the user names a model, resolve the name, shorthand, or partial name against the 
+  available model list and use the resolved model for the requested work. If it cannot 
+  be resolved unambiguously, ask the user instead of selecting a model arbitrarily.
 - Match task characteristics to model tags and prefer models with the strongest fit.
 - Treat tag order as a preference signal, not a hard ranking.
 - If a model behaves abnormally, try another suitable model.
