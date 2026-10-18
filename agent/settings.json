@@ -2,9 +2,8 @@
   "defaultShell": "zsh",
   "includeCoAuthoredBy": false,
   "quietStartup": false,
-  "theme": "neon-green",
   "tuiMode": "fullscreen",
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "1.2.0",
   "defaultThinkingLevel": "medium",
   "doubleEscapeAction": "none",
   "hideThinkingBlock": true,
@@ -12,15 +11,11 @@
   "defaultToolPresentation": "collapsed",
   "showHardwareCursor": true,
   "packages": [
-    "npm:pi-mcp-adapter",
     "npm:pi-web-access",
-    "npm:pi-minimal-footer",
-    "npm:pi-startup-header",
     "npm:pi-ask-user",
     "npm:@xvzc/pi-subagents-minimal",
     "npm:@xvzc/pi-tasks"
   ],
-
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6-sol",
   "enabledModels": [
@@ -31,7 +26,6 @@
     "opencode-go/muse-spark-1.3-contributor",
     "opencode-go/glm-5.3-flash"
   ],
-
   "pi-ask-user": {
     "displayMode": "inline"
   }

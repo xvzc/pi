@@ -1,5 +1,5 @@
 AGENT_SOURCE := $(abspath $(dir $(lastword $(MAKEFILE_LIST)))agent)
-AGENT_ITEMS := $(filter-out npm .pi,$(notdir $(wildcard $(AGENT_SOURCE)/* $(AGENT_SOURCE)/.[!.]* $(AGENT_SOURCE)/..?*)))
+AGENT_ITEMS := SYSTEM.md agents extensions keybindings.json mcp.json prompts settings.json skills
 AGENT_DEST := $(HOME)/.pi/agent
 
 .PHONY: init
