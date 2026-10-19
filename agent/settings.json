@@ -17,10 +17,10 @@
     "npm:@xvzc/pi-tasks"
   ],
   "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-6-sol",
+  "defaultModel": "gpt-6.1-sol",
   "enabledModels": [
     "openai-codex/gpt-6-astra",
-    "openai-codex/gpt-6-sol",
+    "openai-codex/gpt-6.1-sol",
     "openai-codex/gpt-6-luna",
     "opencode-go/deepseek-v4.1-flash",
     "opencode-go/muse-spark-1.3-contributor",

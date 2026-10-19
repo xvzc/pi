@@ -248,7 +248,7 @@ Each model has task-fit tags ordered from strongest to weaker relative specializ
 - `openai-codex/gpt-6-astra`
   - tags: `[reasoning, architecture, review, debugging, coding, investigation]`
   - may be selected only when explicitly requested by the user
-- `openai-codex/gpt-6-sol`
+- `openai-codex/gpt-6.1-sol`
   - tags: `[reasoning, review, architecture, debugging, coding, investigation]`
 - `opencode-go/deepseek-v4.1-flash`
   - tags: `[coding, debugging, codebase, investigation, automation, tool-use]`
@@ -285,7 +285,7 @@ Map to the closest supported level:
 - Choose model and reasoning depth independently.
 - Deeper reasoning does not substitute for better model fit.
 - If no suitable healthy model remains, stop and report the blocker.
-- Default to `openai-codex/gpt-6-sol` when no specialization clearly fits.
+- Default to `openai-codex/gpt-6.1-sol` when no specialization clearly fits.
 
 </model-and-thinking-selection>
 
