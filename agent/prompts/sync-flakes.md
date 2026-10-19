@@ -9,7 +9,7 @@ description: Commit and push nvim/pi changes, update Nix flakes, then run nis
 Invoking this prompt assigns the task of completing the steps below in order and grants one-time approval **for this execution only** to:
 
 - Push safe, intended changes from `~/.config/nvim` and `~/.config/pi` to each repository's `origin/main`.
-- Run the `sudo darwin-rebuild switch` operation contained in step 4's `zsh -ic 'nis'`.
+- Run the `sudo darwin-rebuild switch` operation contained in step 4's `zsh -ic 'nbs'`.
 
 This is not standing authorization for future invocations or unrelated elevated operations. It does not authorize bypassing Git, credential, or destructive-action safeguards. Perform the steps below **in order**. If a step cannot safely complete, stop and report the blocker; do not continue to later steps.
 
@@ -35,7 +35,7 @@ If either entry uses a local path, change only that entry to its listed `npm:` s
 run exactly:
 
 ```sh
-nix flake update pi-xvzc nvim-xvzc --flake ~/nixconf
+zsh -ic 'nfu pi-xvzc nvim-xvzc --flake ~/nixconf'
 ```
 
 A pre-existing dirty `flake.lock` (uncommitted changes) is expected and is not a reason to stop or ask; this command may replace the prior pin values of the selected inputs. Do not discard or revert unrelated existing changes. If the command fails, stop and report the failure. Do not commit or push `~/nixconf` unless separately authorized.
