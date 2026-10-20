@@ -40,12 +40,12 @@ zsh -ic 'nfu pi-xvzc nvim-xvzc --flake ~/nixconf'
 
 A pre-existing dirty `flake.lock` (uncommitted changes) is expected and is not a reason to stop or ask; this command may replace the prior pin values of the selected inputs. Do not discard or revert unrelated existing changes. If the command fails, stop and report the failure. Do not commit or push `~/nixconf` unless separately authorized.
 
-## 4. Run nis
+## 4. Build and switch
 
 After the update succeeds, run exactly:
 
 ```sh
-zsh -ic 'nis'
+zsh -ic 'nbs'
 ```
 
 If it fails, stop and report the failure.
