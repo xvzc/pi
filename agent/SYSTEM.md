@@ -250,6 +250,8 @@ Each model has task-fit tags ordered from strongest to weaker relative specializ
   - may be selected only when explicitly requested by the user
 - `openai-codex/gpt-6.1-sol`
   - tags: `[reasoning, review, architecture, debugging, coding, investigation]`
+- `openai-codex/gpt-6-sol`
+  - tags: `[reasoning, review, architecture, debugging, coding, investigation]`
 - `opencode-go/deepseek-v4.1-flash`
   - tags: `[coding, debugging, codebase, investigation, automation, tool-use]`
 - `opencode-go/muse-spark-1.3-contributor`
