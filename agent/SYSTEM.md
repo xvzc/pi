@@ -287,7 +287,6 @@ Map to the closest supported level:
 - Choose model and reasoning depth independently.
 - Deeper reasoning does not substitute for better model fit.
 - If no suitable healthy model remains, stop and report the blocker.
-- Default to `openai-codex/gpt-6.1-sol` when no specialization clearly fits.
 
 </model-and-thinking-selection>
 
